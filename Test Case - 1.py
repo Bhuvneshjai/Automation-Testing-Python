@@ -6,10 +6,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # Specify the path of chrome driver
-service = Service(r"C:\Users\HP\Desktop\Projects\Projects_Code\Automation-Practice\Drivers\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+# Gives path when exe file is not exist in Python Scripts directory
+# service = Service(r"C:\Users\HP\Desktop\Projects\Projects_Code\Automation-Practice\Drivers\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+
+# Not Give Driver path because driver file is stored in Python Scripts Directory
+service = Service()
 
 # Initialize the Chrome Driver
-chromeDriver = webdriver.Chrome(service=service)
+# When Chrome Driver Exe file does not store in Python main Scripts Directory
+# chromeDriver = webdriver.Chrome(service=service)
+
+# Chrome Driver exist in Python Scripts Directory
+chromeDriver = webdriver.Chrome()
 
 # Open the Website
 chromeDriver.get("https://opensource-demo.orangehrmlive.com")
